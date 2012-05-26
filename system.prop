@@ -1,0 +1,35 @@
+rild.libpath=/system/lib/libril-qc-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+
+ro.telephony.default_network=0
+ril.subscription.types=NV,RUIM
+ro.telephony.ril_class=LGEQualcommRIL
+mobiledata.interfaces=rmnet0,rmnet1,rmnet2
+ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,icccardstatus,1
+
+persist.sys.usb.config=mass_storage
+
+ro.opengles.version=131072
+
+ro.sf.lcd_density=160
+
+Allows the phone to sleep better
+ro.ril.disable.power.collapse=1
+
+# Saves power when phone is sleep
+pm.sleep_mode=1
+
+# Allows your wifi to scan less, saving more battery
+wifi.supplicant_scan_interval=150
+
+# Helps Scrolling Responsiveness
+windowsmgr.max_events_per_sec=150
