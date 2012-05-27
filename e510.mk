@@ -11,7 +11,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/univa_keypad.kl:system/usr/keylayout/univa_keypad.kl \
     $(LOCAL_PATH)/configs/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     $(LOCAL_PATH)/configs/qt602240_ts_input.idc:system/usr/idc/qt602240_ts_input.idc \
-    $(LOCAL_PATH)/prebuilt/init.qcom.sh:root/init.qcom.sh \
+    $(LOCAL_PATH)/prebuilt/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.e510.rc:root/init.e510.rc \

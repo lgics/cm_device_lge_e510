@@ -16,7 +16,7 @@ ro.telephony.ril_class=LGEQualcommRIL
 mobiledata.interfaces=rmnet0,rmnet1,rmnet2
 ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,icccardstatus,1
 
-persist.sys.usb.config=mass_storage
+persist.sys.usb.config=mass_storage,adb
 
 ro.opengles.version=131072
 
