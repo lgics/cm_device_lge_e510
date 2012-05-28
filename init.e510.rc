@@ -16,3 +16,4 @@ service ami304d /system/bin/ami304d
     class main
     user compass
     group system
+
