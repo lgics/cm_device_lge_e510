@@ -55,7 +55,7 @@ trap "kill_hciattach" TERM INT
 start_hciattach
 
 # Give hciattach time to settle
-sleep 1
+sleep 10
 logi "Fixing PCM setting..."
 /system/xbin/hcitool cmd 0x3f 0x1c 0x00 0x04 0x00 0x00 0x00 || loge "FAILED"
 logi "Writing Sleep mode setting..."
