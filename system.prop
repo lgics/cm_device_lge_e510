@@ -12,8 +12,6 @@ persist.rild.nitz_short_ons_3=
 
 
 ro.telephony.call_ring.multiple=false
-ril.subscription.types=NV,RUIM
-ro.telephony.ril_class=LGEQualcommRIL
 mobiledata.interfaces=rmnet0,rmnet1,rmnet2
 ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,icccardstatus,1
 
