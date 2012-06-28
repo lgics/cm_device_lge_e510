@@ -9,19 +9,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/univa_keypad.kl:system/usr/keylayout/univa_keypad.kl \
     $(LOCAL_PATH)/configs/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     $(LOCAL_PATH)/configs/qt602240_ts_input.idc:system/usr/idc/qt602240_ts_input.idc \
-    $(LOCAL_PATH)/prebuilt/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
 
-# e510 init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.e510.rc:root/init.e510.rc \
-    $(LOCAL_PATH)/ueventd.e510.rc:root/ueventd.e510.rc
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nvram.txt:system/etc/wl/nvram.txt \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
-# P500 Audio
+# E510 Audio
 PRODUCT_PACKAGES += \
     audio_policy.e510 \
     audio.primary.e510

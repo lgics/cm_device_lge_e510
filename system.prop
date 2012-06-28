@@ -10,12 +10,15 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 
-
+ril.subscription.types=NV,RUIM
+ro.telephony.ril_class=LGEQualcommRIL
 ro.telephony.call_ring.multiple=false
 mobiledata.interfaces=rmnet0,rmnet1,rmnet2
 ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,icccardstatus,1
 
 persist.sys.usb.config=mass_storage,adb
+
+ro.camera.sound.forced=1
 
 # BT
 ro.bt.bdaddr_path=/data/misc/bd_addr
