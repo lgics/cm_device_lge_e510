@@ -18,6 +18,7 @@ ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,iccc
 
 persist.sys.usb.config=mass_storage,adb
 
+# Remove camera sound
 ro.camera.sound.forced=1
 
 # BT
