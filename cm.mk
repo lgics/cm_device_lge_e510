@@ -10,10 +10,6 @@ $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 # Include FM-Radio stuff
 #$(call inherit-product, vendor/cyanogen/products/bcm_fm_radio.mk)
 
-#include qcom opensource features
-$(call inherit-product, vendor/qcom/opensource/omx/mm-core/Android.mk)
-$(call inherit-product, vendor/qcom/opensource/omx/mm-video/Android.mk)
-
 # Prepare for new BootAnimation
 TARGET_BOOTANIMATION_NAME := vertical-320x480
 
