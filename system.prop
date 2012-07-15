@@ -18,8 +18,8 @@ ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,iccc
 
 persist.sys.usb.config=mass_storage,adb
 
-# Remove camera sound
-ro.camera.sound.forced=1
+# Disable camera sound
+ro.camera.sound.forced=0
 
 # BT
 ro.bt.bdaddr_path=/data/misc/bd_addr
