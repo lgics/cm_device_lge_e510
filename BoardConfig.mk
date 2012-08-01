@@ -18,10 +18,13 @@ WIFI_DRIVER_MODULE_NAME         := "wireless"
 WIFI_DRIVER_FW_PATH_STA         := "/system/etc/wl/rtecdc.bin"
 WIFI_DRIVER_FW_PATH_AP          := "/system/etc/wl/rtecdc-apsta.bin"
 
+TARGET_PROVIDES_LIBAUDIO := true
+COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
+
 # FM Radio
 BOARD_FM_DEVICE := bcm4330
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO -DFM_RADIO
 
-USE_CAMERA_STUB := false
+
 

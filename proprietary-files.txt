@@ -68,6 +68,10 @@ lib/egl/egl.cfg
 etc/firmware/yamato_pfp.fw
 etc/firmware/yamato_pm4.fw
 
+## msm7x27 audio (ICS)
+lib/hw/audio.primary.msm7x27.so
+lib/hw/audio_policy.msm7x27.so
+
 ## OMX Encoders/Decoders
 lib/libOmxAacDec.so
 lib/libOmxAacEnc.so
