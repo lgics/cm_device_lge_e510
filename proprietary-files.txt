@@ -39,6 +39,8 @@ bin/atd
 
 ## AUDIO
 lib/libaudioeq.so
+lib/hw/audio.primary.e510.so
+lib/hw/audio_policy.e510.so
 
 ## CAMERA
 lib/liboemcamera.so
