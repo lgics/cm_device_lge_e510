@@ -36,6 +36,7 @@ lib/libril.so
 bin/qmuxd
 etc/flex/flex.xml
 bin/atd
+bin/rild
 
 ## AUDIO
 lib/libaudioeq.so
@@ -57,6 +58,7 @@ etc/wl/rtecdc-apsta.bin
 ## HAL
 bin/ami304d
 lib/hw/sensors.e510.so
+lib/hw/lights.msm7x27.so
 
 ## EGL
 lib/egl/libEGL_adreno200.so

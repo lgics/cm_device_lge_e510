@@ -10,6 +10,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     $(LOCAL_PATH)/configs/qt602240_ts_input.idc:system/usr/idc/qt602240_ts_input.idc \
 
+# e510 init
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.e510.rc:root/init.e510.rc \
+    $(LOCAL_PATH)/ueventd.e510.rc:root/ueventd.e510.rc
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \

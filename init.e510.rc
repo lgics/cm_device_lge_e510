@@ -1,0 +1,27 @@
+# inherit qcom init
+import init.qcom.rc
+
+on boot
+
+    ## VIBRATOR
+    chmod 0660 /sys/class/timed_output/vibrator/amp
+
+    ## SENSOR
+	mkdir /data/amit 0777 ami304d ami304d
+	chmod 0666 /data/amit/AMI306_Config.ini
+    chmod 0666 /data/amit/AMI306_Config2.ini
+
+    ## PROXIMITY SENSOR
+	chown compass system /sys/bus/i2c/drivers/proximity_gp2ap/4-0044/enable
+	chmod 0660 /sys/bus/i2c/drivers/proximity_gp2ap/4-0044/enable
+
+    # BACKLIGHT
+    chmod 0664 /sys/class/leds/lcd-backlight/alc
+    chown system system /sys/devices/platform/mddi_hitachi_hvga.10/lcd_onoff
+    chmod 0664 /sys/devices/platform/mddi_hitachi_hvga.10/lcd_onoff
+
+service ami304d /system/bin/ami304d
+    class main
+    user compass
+    group system
+

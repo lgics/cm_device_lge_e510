@@ -33,9 +33,6 @@ PRODUCT_COPY_FILES += \\
      $OUTDIR/proprietary/lib/libmmjpeg.so:obj/lib/libmmjpeg.so \\
      $OUTDIR/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so \\
      $OUTDIR/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\
-     $OUTDIR/proprietary/lib/libgstk_exp.so:obj/lib/libgstk_exp.so \\
-     $OUTDIR/proprietary/lib/libpbmlib.so:obj/lib/libpbmlib.so \\
-     $OUTDIR/proprietary/lib/libwms.so:obj/lib/libwms.so \\
 
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
