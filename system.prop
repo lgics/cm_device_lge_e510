@@ -18,8 +18,11 @@ ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,iccc
 
 persist.sys.usb.config=mass_storage,adb
 
-# Disable camera sound
-ro.camera.sound.forced=0
+# enable dithering (always)
+persist.sys.use_dithering=2
+
+# Store dalvik-cache on /data
+dalvik.vm.dexopt-data-only=1
 
 # BT
 ro.bt.bdaddr_path=/data/misc/bd_addr

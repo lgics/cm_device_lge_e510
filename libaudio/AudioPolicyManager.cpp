@@ -118,9 +118,8 @@ uint32_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strategy, boo
                 if (device) break;
             }
 #endif
-            // P500 SPEAKER_IN_CALL fix
             if (isInCall()) {
-                device = AUDIO_DEVICE_OUT_SPEAKER_IN_CALL;
+                device = DEVICE_OUT_SPEAKER_IN_CALL;
                 if (device)
                     break;
             }
@@ -203,14 +202,9 @@ uint32_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strategy, boo
             LOGE("getDeviceForStrategy() speaker device not found");
         }
 
-#ifdef FM_RADIO
-        if (mAvailableOutputDevices & AudioSystem::DEVICE_OUT_FM) {
-            device |= AudioSystem::DEVICE_OUT_FM;
-            
-            if (device == (AudioSystem::DEVICE_OUT_SPEAKER | AudioSystem::DEVICE_OUT_WIRED_HEADSET | AudioSystem::DEVICE_OUT_FM))
-                device = AudioSystem::DEVICE_OUT_SPEAKER;
-            else if(device & AudioSystem::DEVICE_OUT_WIRED_HEADSET)
-                 device &= ~(device & AudioSystem::DEVICE_OUT_WIRED_HEADSET);
+#ifdef HAVE_FM_RADIO
+        if (mAvailableOutputDevices & AudioSystem::DEVICE_OUT_FM_ALL) {
+                device |= AudioSystem::DEVICE_OUT_FM_ALL;
         }
 #endif
         // Do not play media stream if in call and the requested device would change the hardware
