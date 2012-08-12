@@ -31,14 +31,14 @@ persist.sys.use_dithering=2
 # Store dalvik-cache on /data
 dalvik.vm.dexopt-data-only=1
 
-Allows the phone to sleep better
+# Allows the phone to sleep better
 ro.ril.disable.power.collapse=1
 
 # Saves power when phone is sleep
 pm.sleep_mode=1
 
 # Allows your wifi to scan less, saving more battery
-wifi.supplicant_scan_interval=150
+wifi.supplicant_scan_interval=180
 
 # Helps Scrolling Responsiveness
 windowsmgr.max_events_per_sec=150
