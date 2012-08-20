@@ -955,10 +955,10 @@ static int msm72xx_enable_postproc(bool state)
         device_id = 1;
         LOGI("set device to SND_DEVICE_HANDSET device_id=1");
     }
-    if(snd_device == SND_DEVICE_STEREO_HEADSET || snd_device == SND_DEVICE_HEADSET_MEDIA)
+    if(snd_device == SND_DEVICE_STEREO_HEADSET || snd_device == SND_DEVICE_SPEAKER_MEDIA)
     {
         device_id = 2;
-        LOGI("set device to SND_DEVICE_STEREO_HEADSET/SND_DEVICE_HEADSET_MEDIA device_id=2");
+        LOGI("set device to SND_DEVICE_STEREO_HEADSET/SND_DEVICE_SPEAKER_MEDIA device_id=2");
     }
 
     fd = open(PCM_CTL_DEVICE, O_RDWR);
@@ -1182,7 +1182,6 @@ status_t AudioHardware::setMasterVolume(float v)
     set_volume_rpc(SND_DEVICE_SPEAKER_PHONE, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_BT,      SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_HEADSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
-    set_volume_rpc(SND_DEVICE_HEADSET_MEDIA, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_STEREO_HEADSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_IN_S_SADC_OUT_HANDSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_IN_S_SADC_OUT_SPEAKER_PHONE, SND_METHOD_VOICE, vol, m7xsnddriverfd);
@@ -1470,7 +1469,7 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
                 new_snd_device = SND_DEVICE_SPEAKER_MEDIA;
                 new_post_proc_feature_mask = (ADRC_ENABLE | EQ_ENABLE | RX_IIR_ENABLE | MBADRC_ENABLE);
             }
-        } else if (outputDevices & DEVICE_OUT_SPEAKER_PHONE) {
+        } else if (outputDevices & AUDIO_DEVICE_OUT_SPEAKER_PHONE) {
             LOGI("Routing audio to Speakerphone\n");
             new_snd_device = SND_DEVICE_SPEAKER_PHONE;
             new_post_proc_feature_mask = (ADRC_ENABLE | EQ_ENABLE | RX_IIR_ENABLE | MBADRC_ENABLE);
