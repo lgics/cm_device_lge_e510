@@ -6,7 +6,7 @@ TARGET_KERNEL_CONFIG := cyanogenmod_e510_defconfig
 TARGET_BOOTLOADER_BOARD_NAME := e510
 TARGET_OTA_ASSERT_DEVICE := univa,e510
 
-BOARD_KERNEL_CMDLINE := mem=471M console=ttyMSM2,115200n8 androidboot.hardware=e510
+BOARD_KERNEL_CMDLINE := mem=471M console=ttyMSM2,115200n8 androidboot.hardware=e510 no_console_suspend
 
 # Wi-Fi & Wi-Fi HotSpot
 WPA_SUPPLICANT_VERSION          := VER_0_6_X
@@ -20,6 +20,8 @@ WIFI_DRIVER_MODULE_NAME         := "wireless"
 WIFI_DRIVER_FW_PATH_STA         := "/system/etc/wl/rtecdc.bin"
 WIFI_DRIVER_FW_PATH_AP          := "/system/etc/wl/rtecdc-apsta.bin"
 
+TARGET_PROVIDES_LIBRIL := true
+
 # Fix this up by examining /proc/mtd on a running device
 BOARD_KERNEL_BASE := 0x12800000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -31,11 +33,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PROVIDES_LIBAUDIO := true
 COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
-
-# FM Radio
-BOARD_FM_DEVICE := bcm4330
-BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO -DFM_RADIO
+# Enable ICS-backwards compatibility    
+COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_COMPAT
+# Disable PIE since it breaks ICS camera blobs
+TARGET_DISABLE_ARM_PIE := true
 
 
 

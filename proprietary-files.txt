@@ -36,12 +36,18 @@ lib/libril.so
 bin/qmuxd
 etc/flex/flex.xml
 bin/atd
-bin/rild
+
 
 ## AUDIO
 lib/libaudioeq.so
 lib/hw/audio.primary.e510.so
 lib/hw/audio_policy.e510.so
+
+## OMX CORE (ICS)
+lib/libmm-omxcore.so
+lib/libOmxCore.so
+lib/libstagefrighthw.so
+lib/libstagefright_soft_aacdec.so
 
 ## CAMERA
 lib/liboemcamera.so
