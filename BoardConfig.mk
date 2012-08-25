@@ -6,6 +6,8 @@ TARGET_KERNEL_CONFIG := cyanogenmod_e510_defconfig
 TARGET_BOOTLOADER_BOARD_NAME := e510
 TARGET_OTA_ASSERT_DEVICE := univa,e510
 
+BOARD_KERNEL_CMDLINE := mem=471M console=ttyMSM2,115200n8 androidboot.hardware=e510 no_console_suspend
+
 # Nedeed for sensors
 COMMON_GLOBAL_CFLAGS += -DUSE_LGE_ALS_DUMMY
 
