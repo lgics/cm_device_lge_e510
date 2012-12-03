@@ -1418,28 +1418,28 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
                     new_snd_device = SND_DEVICE_FM_HEADSET;
                     new_post_proc_feature_mask = (EQ_ENABLE | RX_IIR_ENABLE);
                     new_post_proc_feature_mask &= (MBADRC_DISABLE | ADRC_DISABLE);
-                }
+                } else
 #endif
+                {
+                    ALOGI("Routing audio to No microphone Wired Headset (%d,%x)\n", mMode, outputDevices);
+                    new_snd_device = SND_DEVICE_NO_MIC_HEADSET;
+                }
             }
 #endif // COMBO_DEVICE_SUPPORTED
         } else if (outputDevices & AudioSystem::DEVICE_OUT_WIRED_HEADSET) {
-/* #ifdef HAVE_FM_RADIO
+#ifdef HAVE_FM_RADIO
             if (mFmRadioEnabled) {
                 ALOGI("Routing FM audio to Wired Headset\n");
                 new_snd_device = SND_DEVICE_FM_HEADSET;
                 new_post_proc_feature_mask = (EQ_ENABLE | RX_IIR_ENABLE);
                 new_post_proc_feature_mask &= (MBADRC_DISABLE | ADRC_DISABLE);
-            } else
+            } else 
+#endif     	
             {
                 ALOGI("Routing audio to Wired Headset\n");
                 new_snd_device = SND_DEVICE_HEADSET_STEREO; //STEREO
                 new_post_proc_feature_mask = (ADRC_ENABLE | EQ_ENABLE | RX_IIR_ENABLE | MBADRC_ENABLE);
-            } else
-#endif */ //For now
-            //{
-                ALOGI("Routing audio to No microphone Wired Headset (%d,%x)\n", mMode, outputDevices);
-                new_snd_device = SND_DEVICE_NO_MIC_HEADSET;
-             //}
+            }
         } else if (outputDevices & AudioSystem::DEVICE_OUT_WIRED_HEADPHONE) {
 #ifdef HAVE_FM_RADIO
             if (mFmRadioEnabled) {
