@@ -131,12 +131,6 @@ audio_devices_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strate
                 if (device) break;
             }
 #endif
-            // P500 SPEAKER_IN_CALL fix
-            if (isInCall()) {
-                device = AUDIO_DEVICE_OUT_SPEAKER_IN_CALL;
-                if (device)
-                    break;
-            }
 
             device = mAvailableOutputDevices & AudioSystem::DEVICE_OUT_SPEAKER;
             if (device == 0) {
