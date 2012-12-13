@@ -38,9 +38,6 @@ namespace android_audio_legacy {
 using android::SortedVector;
 using android::Mutex;
 
-// P500 SPEAKER_IN_CALL fix
-#define AUDIO_DEVICE_OUT_SPEAKER_IN_CALL 0x4000
-
 
 // ----------------------------------------------------------------------------
 // Kernel driver interface
