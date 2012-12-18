@@ -1153,7 +1153,7 @@ status_t AudioHardware::setVoiceVolume(float v)
     if (v < 0.0) {
         ALOGW("setVoiceVolume(%f) under 0.0, assuming 0.0\n", v);
         v = 0.0;
-    } else if (v > 1.0) {
+    } else if ((v > 1.0) || (v > 0.6)) { // Fix Calls Volumes
         ALOGW("setVoiceVolume(%f) over 1.0, assuming 1.0\n", v);
         v = 1.0;
     }
