@@ -118,11 +118,6 @@ uint32_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strategy, boo
                 if (device) break;
             }
 #endif
-            if (isInCall()) {
-                device = DEVICE_OUT_SPEAKER_IN_CALL;
-                if (device)
-                    break;
-            }
 
             device = mAvailableOutputDevices & AudioSystem::DEVICE_OUT_SPEAKER;
             if (device == 0) {
