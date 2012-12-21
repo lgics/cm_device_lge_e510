@@ -95,28 +95,28 @@ static int snd_device = -1;
 #define PREPROC_CTL_DEVICE "/dev/msm_preproc_ctl"
 #define VOICE_MEMO_DEVICE "/dev/msm_voicememo"
 
-static uint32_t SND_DEVICE_CURRENT=-1;
-static uint32_t SND_DEVICE_HANDSET=-1;
-static uint32_t SND_DEVICE_SPEAKER_MEDIA=-1;
-static uint32_t SND_DEVICE_SPEAKER_PHONE=-1;
-static uint32_t SND_DEVICE_BT=-1;
-static uint32_t SND_DEVICE_BT_EC_OFF=-1;
-static uint32_t SND_DEVICE_HEADSET=-1;
-static uint32_t SND_DEVICE_STEREO_HEADSET=-1;
-static uint32_t SND_DEVICE_HEADSET_AND_SPEAKER=-1;
-static uint32_t SND_DEVICE_IN_S_SADC_OUT_HANDSET=-1;
-static uint32_t SND_DEVICE_IN_S_SADC_OUT_SPEAKER_PHONE=-1;
-static uint32_t SND_DEVICE_TTY_HEADSET=-1;
-static uint32_t SND_DEVICE_TTY_HCO=-1;
-static uint32_t SND_DEVICE_TTY_VCO=-1;
-static uint32_t SND_DEVICE_CARKIT=-1;
+static uint32_t SND_DEVICE_CURRENT=0;
+static uint32_t SND_DEVICE_HANDSET=1;
+static uint32_t SND_DEVICE_SPEAKER_MEDIA=2;
+static uint32_t SND_DEVICE_SPEAKER_PHONE=3;
+static uint32_t SND_DEVICE_BT=4;
+static uint32_t SND_DEVICE_BT_EC_OFF=5;
+static uint32_t SND_DEVICE_HEADSET=6;
+static uint32_t SND_DEVICE_STEREO_HEADSET=7;
+static uint32_t SND_DEVICE_HEADSET_AND_SPEAKER=8;
+static uint32_t SND_DEVICE_IN_S_SADC_OUT_HANDSET=9;
+static uint32_t SND_DEVICE_IN_S_SADC_OUT_SPEAKER_PHONE=10;
+static uint32_t SND_DEVICE_TTY_HEADSET=11;
+static uint32_t SND_DEVICE_TTY_HCO=12;
+static uint32_t SND_DEVICE_TTY_VCO=13;
+static uint32_t SND_DEVICE_CARKIT=14;
 #ifdef FM_RADIO
-static uint32_t SND_DEVICE_SPEAKER_FMRADIO=-1;
-static uint32_t SND_DEVICE_STEREO_HEADSET_FMRADIO=-1;
+static uint32_t SND_DEVICE_SPEAKER_FMRADIO=15;
+static uint32_t SND_DEVICE_STEREO_HEADSET_FMRADIO=16;
 #endif
-static uint32_t SND_DEVICE_HEADSET_NO_MIC=-1;
-static uint32_t SND_DEVICE_VOICE_RECORDER=-1;
-static uint32_t SND_DEVICE_VOICE_RECORDER_HEADSET=-1;
+static uint32_t SND_DEVICE_HEADSET_NO_MIC=17;
+static uint32_t SND_DEVICE_VOICE_RECORDER=18;
+static uint32_t SND_DEVICE_VOICE_RECORDER_HEADSET=19;
 // ----------------------------------------------------------------------------
 
 AudioHardware::AudioHardware() :
@@ -1152,7 +1152,7 @@ status_t AudioHardware::setVoiceVolume(float v)
     if (v < 0.0) {
         LOGW("setVoiceVolume(%f) under 0.0, assuming 0.0\n", v);
         v = 0.0;
-    } else if (v > 1.0) {
+    } else if ((v > 0.6) || (v > 1.0)) {
         LOGW("setVoiceVolume(%f) over 1.0, assuming 1.0\n", v);
         v = 1.0;
     }
