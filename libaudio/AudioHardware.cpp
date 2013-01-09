@@ -1469,10 +1469,6 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
                 new_snd_device = SND_DEVICE_SPEAKER_MEDIA;
                 new_post_proc_feature_mask = (ADRC_ENABLE | EQ_ENABLE | RX_IIR_ENABLE | MBADRC_ENABLE);
             }
-        } else if (outputDevices & AUDIO_DEVICE_OUT_SPEAKER_PHONE) {
-            LOGI("Routing audio to Speakerphone\n");
-            new_snd_device = SND_DEVICE_SPEAKER_PHONE;
-            new_post_proc_feature_mask = (ADRC_ENABLE | EQ_ENABLE | RX_IIR_ENABLE | MBADRC_ENABLE);
         } else {
             LOGI("Routing audio to Handset\n");
             new_snd_device = SND_DEVICE_HANDSET;
