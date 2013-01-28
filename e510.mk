@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
     audio_policy.e510 \
     audio.primary.e510
 
+# Camera
+PRODUCT_PACKAGES += \
+    Camera
+
 # Full-featured build of the Open-Source
 $(call inherit-product, build/target/product/full.mk)
 
